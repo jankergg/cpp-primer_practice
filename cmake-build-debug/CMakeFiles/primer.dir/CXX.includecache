@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/janko/Projects/cpp/primer/chapter7/father.h
+
+/Users/janko/Projects/cpp/primer/chapter7/myClass.cpp
+myClass.h
+/Users/janko/Projects/cpp/primer/chapter7/myClass.h
+son.h
+/Users/janko/Projects/cpp/primer/chapter7/son.h
+random
+-
+ctime
+-
+
+/Users/janko/Projects/cpp/primer/chapter7/myClass.h
+../headers/common.h
+/Users/janko/Projects/cpp/primer/headers/common.h
+
+/Users/janko/Projects/cpp/primer/chapter7/son.h
+father.h
+/Users/janko/Projects/cpp/primer/chapter7/father.h
+
+/Users/janko/Projects/cpp/primer/headers/common.h
+iostream
+-
+string
+-
+

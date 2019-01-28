@@ -1,0 +1,3 @@
+/Users/janko/Projects/cpp/primer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/janko/Projects/cpp/primer/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/janko/Projects/cpp/primer/cmake-build-debug/CMakeFiles/primer.dir
