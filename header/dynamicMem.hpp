@@ -10,6 +10,8 @@
 #define dynamicMem_hpp
 
 #include "common.h"
+class TextQuery;
+class QueryResult;
 void dynmem();
-void dynmem(int argc, char * argv[]);
+void dynmem(const int argc, const char *argv[]);
 #endif /* dynamicMem_hpp */
