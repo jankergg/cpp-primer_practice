@@ -102,23 +102,23 @@ istream &process_input(istream &istream, vector<int> &vs)
     int str;
     int count = 10;
     
-    inputloop: while (istream >> str && count){
-        if(str == -1){
-            break;
-        }
-        if(istream.bad()){
-            throw runtime_error("IO stream Error");
-        }
-        if(istream.fail()){
-            cerr << "Data error, Only Integer Acceptable , pleae retry!" << endl;
-            istream.clear();
-            istream.ignore(100, '\n');
-            continue;
-        }
-        cout << "Your inputed: " << str << endl;
-        vs.push_back(str);
-        --count;
+inputloop: while (istream >> str && count){
+    if(str == -1){
+        break;
     }
+    if(istream.bad()){
+        throw runtime_error("IO stream Error");
+    }
+    if(istream.fail()){
+        cerr << "Data error, Only Integer Acceptable , pleae retry!" << endl;
+        istream.clear();
+        istream.ignore(100, '\n');
+        continue;
+    }
+    cout << "Your inputed: " << str << endl;
+    vs.push_back(str);
+    --count;
+}
     
     if(istream.fail()){
         cerr << "Data error, Only Integer Acceptable , pleae retry!" << endl;
@@ -229,6 +229,7 @@ private:
                         mpset->find(word)->second.insert(line_num);
                     } else{
                         mpset->insert({word, {line_num}});
+                        // *(mpset)[word].insert(line_num)
                     }
                 }
                 ++line_num;
