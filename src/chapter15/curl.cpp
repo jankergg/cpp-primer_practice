@@ -6,7 +6,7 @@
 //  Copyright © 2019 janko.zhang. All rights reserved.
 //
 
-#include "../../header/myoop.hpp"
+#include "curl.h"
 #include <curl/curl.h>
 #include <fstream>
 #include <string>
@@ -18,33 +18,45 @@ size_t writeFunction(void *ptr, size_t size, size_t nmemb, std::string* data) {
     return size * nmemb;
 }
 
+class Query{
+    public:
+        Query();
+    private:
+        string data;
+    protected:
+        int num;
+};
+class SubQuery : public Query{
+    SubQuery();
+};
+
 void curl_test(){
     auto curl = curl_easy_init();
     if (curl) {
         curl_easy_setopt(curl, CURLOPT_URL, "http://www.linux-ren.org");
         curl_easy_setopt(curl, CURLOPT_NOPROGRESS, 1L);
-//        curl_easy_setopt(curl, CURLOPT_USERPWD, "user:pass");
-//        curl_easy_setopt(curl, CURLOPT_USERAGENT, "curl/7.42.0");
+        //        curl_easy_setopt(curl, CURLOPT_USERPWD, "user:pass");
+        //        curl_easy_setopt(curl, CURLOPT_USERAGENT, "curl/7.42.0");
         curl_easy_setopt(curl, CURLOPT_MAXREDIRS, 50L);
         curl_easy_setopt(curl, CURLOPT_TCP_KEEPALIVE, 1L);
-        
+
         std::string response_string;
         std::string header_string;
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeFunction);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_string);
         curl_easy_setopt(curl, CURLOPT_HEADERDATA, &header_string);
-        
+
         char* url;
         long response_code;
         double elapsed;
         curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_code);
         curl_easy_getinfo(curl, CURLINFO_TOTAL_TIME, &elapsed);
         curl_easy_getinfo(curl, CURLINFO_EFFECTIVE_URL, &url);
-        
+
         curl_easy_perform(curl);
         curl_easy_cleanup(curl);
         curl = NULL;
-        
+
         cout << "res: "  << response_code << endl;
         cout << "header: "  << header_string << endl;
     }

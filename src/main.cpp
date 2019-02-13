@@ -9,9 +9,10 @@
 //#include "header/myios.hpp"
 //#include "header/dynamicMem.hpp"
 //#include "header/ccopy.hpp"
+#include <vector>
 
 //#include "header/m_operator.hpp"
-#include "header/myoop.hpp"
+#include "chapter15/myoop.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...

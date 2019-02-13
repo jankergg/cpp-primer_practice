@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/janko/Projects/cpp/learncpp/learncpp/header/common.h
+iostream
+-
+stdio.h
+-
+
+/Users/janko/Projects/cpp/learncpp/learncpp/header/myoop.hpp
+common.h
+/Users/janko/Projects/cpp/learncpp/learncpp/header/common.h
+
+/Users/janko/Projects/cpp/learncpp/learncpp/main.cpp
+vector
+-
+header/myoop.hpp
+/Users/janko/Projects/cpp/learncpp/learncpp/header/myoop.hpp
+

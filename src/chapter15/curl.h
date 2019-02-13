@@ -1,15 +1,15 @@
 //
-//  myoop.hpp
+//  curl.h
 //  learncpp
 //
 //  Created by janko.zhang on 2/10/19.
 //  Copyright © 2019 janko.zhang. All rights reserved.
 //
 
-#ifndef myoop_hpp
-#define myoop_hpp
+#ifndef curl_h
+#define curl_h
 
-#include "common.h"
+#include "../common.h"
 
 void myoop();
 #endif /* myoop_hpp */
